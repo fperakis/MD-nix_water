@@ -1,6 +1,6 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -i bash /cfs/home/fpera/gmx_simulations/12_water/nix/cuda.nix
-#SBATCH -n6
+#SBATCH -n1
 #SBATCH -c1
 #SBATCH --gres gpu:a100:1
 #SBATCH -pampere
