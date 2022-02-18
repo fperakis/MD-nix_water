@@ -1,0 +1,43 @@
+
+integrator               = md        
+dt                       = 0.002      ; 2 fs
+nsteps                   = 50000000   ; 100.0 ns
+
+nstenergy                = 5000000      ; save energies every 1 ns
+nstlog                   = 5000000      ; update log file every 1 ns
+nstxout-compressed       = 5000000      ; save compressed coordinates every 1 ns
+
+continuation             = yes
+constraint-algorithm     = lincs
+constraints              = h-bonds
+cutoff-scheme            = Verlet
+
+coulombtype              = PME
+rcoulomb                 = 1.0
+pme_order                = 4         ; cubic interpolation
+fourierspacing           = 0.16      ; grid spacing for FFT
+
+vdwtype                  = Cut-off
+rvdw                     = 1.0
+DispCorr                 = EnerPres
+
+tcoupl                   = V-rescale             ; modified Berendsen thermostat
+tc-grps                  = System
+tau-t                    = 0.1
+ref-t                    = 300
+
+pcoupl                  = Berendsen             ; Pressure coupling on in NPT
+pcoupltype              = isotropic             ; uniform scaling of box vectors
+tau_p                   = 2.0                   ; time constant, in ps
+ref_p                   = 1.0                   ; reference pressure, in bar
+compressibility         = 4.5e-5                ; isothermal compressibility of water, bar^-1
+refcoord_scaling        = com
+
+; Periodic boundary conditions
+pbc                     = xyz       ; 3-D PBC
+
+; Velocity generation
+gen_vel                 = no        ; Velocity generation is off 
+
+
+

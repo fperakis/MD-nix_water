@@ -1,0 +1,35 @@
+
+integrator               = md        
+dt                       = 0.002     ; 2 fs
+nsteps                   = 500000    ; 1 ns
+nstenergy                = 50000     ; 100 ps
+nstlog                   = 50000     ; 100 ps
+nstxout-compressed       = 0         ; suppress
+
+constraint-algorithm     = lincs
+constraints              = h-bonds
+
+cutoff-scheme            = Verlet
+
+coulombtype              = PME
+rcoulomb                 = 1.0
+
+vdwtype                  = Cut-off
+rvdw                     = 1.0
+DispCorr                 = EnerPres
+
+; Temperature coupling is on
+tcoupl                   = V-rescale
+tc-grps                  = System
+tau-t                    = 0.1
+ref-t                    = 300
+; Pressure coupling is off
+pcoupl                  = no        ; no pressure coupling in NVT
+; Periodic boundary conditions
+pbc                     = xyz       ; 3-D PBC
+; Velocity generation
+gen_vel                 = yes       ; assign velocities from Maxwell distribution
+gen_temp                = 300       ; temperature for Maxwell distribution
+gen_seed                = -1        ; generate a random seed
+
+
