@@ -1,11 +1,14 @@
 # MD-nix_water
 An example of runing water MD simulations using gromacs at Fysikum HPC. 
 
+Simulating a water box based on this tutorial
+https://group.miletic.net/en/tutorials/gromacs/1-tip4pew-water/
+
+Gromacs packages are initialised using NixOS, see here. 
+https://github.com/markuskowa/NixOS-QChem
+
 -----
 ## Pipeline
-
-Simulating a water box
-https://group.miletic.net/en/tutorials/gromacs/1-tip4pew-water/
 
 activate nix
 ```bash 
