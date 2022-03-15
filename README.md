@@ -21,7 +21,9 @@ make topology file (topol.top)
 #include "oplsaa.ff/tip4pew.itp"
 
 [ System ]
-TIP4PEW in water
+TIP4PEW
+
+[ Molecules]
 ```
 
 generate box
